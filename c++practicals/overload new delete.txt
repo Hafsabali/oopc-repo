@@ -1,0 +1,41 @@
+#include <iostream>
+using namespace std;
+class Myclass
+{public:
+    
+    int data;
+    Myclass(int val) {
+        data=val;
+        cout<<"Constructor: object created with data="<<data<<endl;
+    }
+    ~Myclass() {
+        cout<<"Object with data="<<data<<" destroyed"<<endl;
+    }
+    void* operator new(size_t size) {
+        cout<<"Overloaded new: Allocating "<<size<<" bytes"<<endl;
+        void *ptr =::operator new(size);
+        return ptr;
+    }
+    void operator delete(void* ptr) {
+        cout<<"Overloaded delete:Deallocating memory"<<endl;
+        ::operator delete(ptr);
+    }
+};
+
+
+int main()
+{
+    Myclass* obj1=new Myclass(10);
+    Myclass* obj2=new Myclass(20);
+    delete obj1;
+    delete obj2;
+    return 0;
+}
+Overloaded new: Allocating 4 bytes
+Constructor: object created with data=10
+Overloaded new: Allocating 4 bytes
+Constructor: object created with data=20
+Object with data=10 destroyed
+Overloaded delete:Deallocating memory
+Object with data=20 destroyed
+Overloaded delete:Deallocating memory

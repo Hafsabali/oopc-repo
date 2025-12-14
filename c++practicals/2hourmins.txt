@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int hour,minutes,seconds;
+    cin>>seconds;
+    hour=seconds/3600;
+    minutes=(seconds%3600)/60;
+    seconds=seconds%60;
+    cout<<hour<<"hour"<<minutes<<"minutes"<<seconds<<"seconds";
+
+    return 0;
+}

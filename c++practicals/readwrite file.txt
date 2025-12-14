@@ -1,0 +1,29 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+int main() 
+{
+    ofstream fout("product.txt",ios::out);
+    string product;
+    int price;
+    cout<<"Enter product name:";
+    cin>>product;
+    fout<<"product:"<<product<<"\n";
+    cout<<"enter price";
+    cin>>price;
+    fout<<"Price:"<<price<<"\n";
+    fout.close();
+    ifstream fin("product.txt",ios::in);
+    string s;
+    while (getline(fin,s)) {
+        cout<<s<<endl;
+    }
+    fin.close();
+    return 0;
+}
+
+Enter product name:burger
+enter price90
+product:burger
+Price:90

@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int x;
+    cout<<"Enter an integer"<<endl;
+    cin>>x;
+    try {
+        if (x>0) {
+            throw(x);
+        }
+        else {
+            throw('s');
+        }
+    }
+    catch(int x) {
+        cout<<"Catch an integer and that integer is:"<<x<<endl;
+    }
+    catch(char x) {
+        cout<<"catch a character and that character is:"<<x<<endl;
+    }
+
+    return 0;
+}
+Enter an integer
+5
+Catch an integer and that integer is:5

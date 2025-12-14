@@ -1,0 +1,69 @@
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+class Filedemo
+{private:
+    string filename;
+ public: 
+    Filedemo(string fname) {
+        filename=fname;
+    }
+    void DisplayFiledetails() {
+        ifstream fin(filename);
+        if (!fin.is_open()) {
+            cout<<"Error"<<endl;
+            return;
+        }
+        string line;
+        int linecount=0;
+        int wordcount=0;
+        while(getline(fin,line)) {
+            linecount++;
+            int wordsinline=0;
+            string word;
+            for (char c:line) {
+                if (isspace(c)) {
+                    if (!word.empty()) {
+                        wordsinline++;
+                        word.clear();
+                    }
+                }
+                else{
+                    word+=c;
+                }
+            }
+            if(!word.empty())wordsinline++;
+            wordcount+=wordsinline;
+         }
+         cout<<"no of lines:"<<linecount<<endl;
+         cout<<"total no of words:"<<wordcount<<endl;
+         fin.close();
+    }
+    
+};
+
+int main()
+{
+   string filename;
+   cout<<"enter filename"<<endl;
+   cin>>filename;
+   Filedemo fileDemo(filename);
+   fileDemo.DisplayFiledetails();
+    
+
+    return 0;
+}
+
+enter filename
+product
+no of lines:2
+total no of words:2

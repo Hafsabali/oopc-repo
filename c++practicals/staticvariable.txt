@@ -1,0 +1,54 @@
+#include <iostream>
+using namespace std;
+static int count=0;
+class StaticDemo 
+{public:
+    StaticDemo() {
+        count++;
+    }
+    static void dispaly() {
+        cout<<"Number of objects created:"<<count<<endl;
+    }
+};
+int main() 
+{
+    StaticDemo s1;
+    StaticDemo s2;
+    StaticDemo s3;
+    StaticDemo::dispaly();
+    
+}
+output:Number of objects created:3
+
+#include <iostream>
+using namespace std;
+static int count=0;
+class StaticDemo 
+{public:
+    static int destroyedcount;
+    StaticDemo() {
+        count++;
+    }
+    static void dispaly() {
+        cout<<"Number of objects created:"<<count<<endl;
+    }
+    ~StaticDemo() {
+        count--;
+        destroyedcount++;
+        
+    }
+    static void dispalyDistroyed() {
+        cout<<"Number of object destroyed:"<<destroyedcount<<endl;
+    }
+};
+int StaticDemo::destroyedcount=0;
+int main() 
+{
+    StaticDemo s1;
+    StaticDemo s2;
+    StaticDemo s3;
+    s3.dispaly();
+    StaticDemo::dispalyDistroyed();
+    
+}
+output: 3 0

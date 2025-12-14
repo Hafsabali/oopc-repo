@@ -1,0 +1,94 @@
+
+#include <iostream>
+using namespace std;
+
+class student
+{
+public:
+    
+    string name;
+    int roll_no;
+};
+
+int main()
+{
+    student s1;
+    s1.name="qwer";
+    s1.roll_no=123;
+    cout<<s1.name<<endl<<s1.roll_no; 
+
+    return 0;
+}
+
+
+
+//using getdetailsand show it
+
+#include <iostream>
+using namespace std;
+
+class student
+{
+private:
+    
+    string name;
+    int roll_no;
+
+public:    
+    void getDetails(){
+        cout<<"Enter name:";
+        cin>>name;
+        cout<<"Enter roll no:";
+        cin>>roll_no;
+    }
+    
+    void showDetails(){
+        cout<<"student details: "<<"Name "<<name<<" "<<"roll_no "<<roll_no;
+    }
+};
+
+int main()
+{
+    student s1;
+    s1.getDetails();
+    s1.showDetails();
+
+    return 0;
+}
+
+
+
+//function difination outside class   
+
+#include <iostream>
+using namespace std;
+
+class student
+{
+private:
+    
+    string name;
+    int roll_no;
+public:
+    void getDetails();
+    void showDetails();
+
+};
+void student::getDetails(){
+    cout<<"Enter name:";
+    cin>>name;
+    cout<<"Enter roll no:";
+    cin>>roll_no;
+    
+}
+void student::showDetails(){
+    cout<<"student details: "<<"Name "<<name<<" "<<"roll_no "<<roll_no;
+}
+int main()
+{
+    student s1;
+    s1.getDetails();
+    s1.showDetails();
+
+    return 0;
+}

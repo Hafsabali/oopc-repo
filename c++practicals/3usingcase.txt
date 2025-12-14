@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int side,length,width,height,radius;
+    float pi=3.14;
+    int choices;
+    float volume;
+    cout<<"enter choices:(squarevolume=1,conevolume=2,rectanglevolume=3): ";
+    cin>>choices;
+    switch(choices){
+        case 1 :{
+            cout<<"Enter side";
+            cin>>side;
+            volume=side*side*side;
+            cout<<"volume is:"<<volume;
+        }
+        case 2 :{
+            cout<<"Enter radius,height ";
+            cin>>radius>>height;
+            volume=pi*radius*radius*height/3;
+            cout<<"volume is:"<<volume;
+        }
+         case 3 :{
+            cout<<"Enter length,widthht ";
+            cin>>length>>width>>height;
+            volume=length*width*height;
+            cout<<"volume is:"<<volume;
+        }
+    }
+    
+    return 0;
+}

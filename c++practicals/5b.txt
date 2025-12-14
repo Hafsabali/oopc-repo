@@ -1,0 +1,31 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+class Geometry
+{public:
+  
+  double area(double radius) { 
+       return M_PI*radius*radius;
+  }
+  double area(double length,double width) {
+      return length*width;
+  }
+  double volume(double radius,double height) {
+      return M_PI*radius*radius*height;
+  }
+};
+
+int main()
+{
+    Geometry obj;
+    cout<<"Area of a circle is:"<<obj.area(4)<<endl;
+    cout<<"Area of rectangle is:"<<obj.area(4,6)<<endl;
+    cout<<"Volume of cylinder is:"<<obj.volume(4,8)<<endl;
+    
+
+    return 0;
+}
+
+Area of a circle is:50.2655
+Area of rectangle is:24
+Volume of cylinder is:402.124

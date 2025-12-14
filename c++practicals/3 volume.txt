@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int a=4;
+    int volume;
+    volume=a*a*a;
+    cout<<"volume of square: "<<volume;
+    float pi=3.14;
+    float r=4;
+    int h=4;
+    float coneVolume;
+    coneVolume=pi*r*r*h/3;
+    cout<<"Cone volume:"<<coneVolume;
+    int l=4,w=4;
+    int volumeofrectangle;
+    volumeofrectangle=l*w*h;
+    return 0;
+}

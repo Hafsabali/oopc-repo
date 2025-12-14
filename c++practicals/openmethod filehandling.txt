@@ -1,0 +1,39 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+int main() 
+{
+    ofstream fout;
+    fout.open("Books.txt");
+    fout<<"Network Security\n";
+    fout<<"Computational Thinking\n";
+    fout<<"Machine Learning\n";
+    fout.close();
+    fout.open("Authors.txt");
+    fout<<"Shwetta Agharwal\n";
+    fout<<"atul Kahate\n";
+    fout<<"Balguruswami\n";
+    fout.close();
+    ifstream fin;
+    fin.open("Books.txt");
+    string s;
+    while(getline(fin,s)) {
+        cout<<s<<endl;
+    }
+    fin.close();
+    fin.open("Authors.txt");
+    string var;
+    while(getline(fin,var)) {
+        cout<<var<<endl;
+    }
+    fin.close();
+    return 0;
+}
+
+Network Security
+Computational Thinking
+Machine Learning
+Shwetta Agharwal
+atul Kahate
+Balguruswami
